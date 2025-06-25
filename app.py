@@ -16,7 +16,7 @@ copd2_map = {'無し': 0, 'あり': 1}
 location2_map = {'胃': 0, '食道胃接合部': 1}
 combined_resection_map = {'無し': 0, 'あり': 1}
 asa_ps_2_map = {'1': 0, '2': 1, '3_4': 2}
-c_t_3_map = {'cT1': 0, 'cT2': 1, 'c_T3': 2, 'cT4': 3}
+c_t_3_map = {'cT1': 0, 'cT2': 1, 'cT3': 2, 'cT4': 3}
 reconstruction2_map = {'B-1': 0, 'B-2': 1, 'R-Y': 2, 'その他': 3}
 
 # 入力フォーム
@@ -48,4 +48,4 @@ if st.button("予測する"):
     probs = [model.predict_proba(input_data)[0][1] for model in cv_models]
     avg_prob = round(np.mean(probs) * 100, 1)
 
-    st.subheader(f"≥CD2 術後合併症発症確率の予測値：{avg_prob:.1f}%")
+    st.subheader(f"≥CD2 術後合併症発生確率の予測値：{avg_prob:.1f}%")
